@@ -1,13 +1,19 @@
 'use strict';
 
 const generateKey = (length, characters) => {
-  let end = " ";
+  let result = '';  
+  
+
   for (let i = 0; i < length; i++) {
-     end += characters[Math.floor(Math.random() * characters.length)];
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    result += characters[randomIndex];
   }
-  return end;
+  
+  return result;
 };
 
-const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
+const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+
 const key = generateKey(11, characters);
-console.log(key); 
+console.log(key);
+
